@@ -1,7 +1,14 @@
+import { Route, Routes } from 'react-router-dom';
+import { ChatbotPage, EnrollStudentPage, EnrolledStudentPage } from './pages';
+
 function App() {
   return (
     <div className="App">
-      <h1>Student Enrollment App</h1>
+      <Routes>
+        <Route path="/" element={<EnrollStudentPage />} />
+        <Route path="/chatbot" element={<ChatbotPage />} />
+        <Route path="/enrolledStudent" element={<EnrolledStudentPage />} />
+      </Routes>
     </div>
   );
 }
