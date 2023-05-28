@@ -1,9 +1,14 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function EnrollStudentPage() {
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <h1>Enroll Student Page</h1>
+    <div className="enroll-student-page">
+      <p>Enter Into Student Info System</p>
+      <button type="button" onClick={() => navigate('/chatbot')}>
+        Enroll Now!
+      </button>
     </div>
   );
 }
