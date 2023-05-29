@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { createClientMessage } from 'react-chatbot-kit';
+import { addCurrentStudentName } from '../slices/studentSlice';
 
 function NameInput(props) {
   const [name, setName] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
@@ -14,6 +18,8 @@ function NameInput(props) {
       }));
 
       props.actionProvider.handleEnterAge();
+
+      dispatch(addCurrentStudentName(name));
     }
   };
 

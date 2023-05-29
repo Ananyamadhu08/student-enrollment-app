@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { createClientMessage } from 'react-chatbot-kit';
+import { useDispatch } from 'react-redux';
+import { addCurrentStudentAge } from '../slices/studentSlice';
 
 function AgeDropdown(props) {
   const [selectedAge, setSelectedAge] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleAgeChange = (event) => {
     setSelectedAge(event.target.value);
@@ -13,6 +17,8 @@ function AgeDropdown(props) {
       ...prev,
       messages: [...prev.messages, botMessage],
     }));
+
+    dispatch(addCurrentStudentAge(event.target.value));
 
     props.actionProvider.handleStudentEnrollment();
   };
