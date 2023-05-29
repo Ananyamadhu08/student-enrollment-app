@@ -28,4 +28,78 @@ body {
   padding: 1rem 2rem;
   border-radius: 0.7rem;
   background-color: rgb(99 102 241);
+  cursor: pointer;
+}
+
+/* got it button */
+
+.got-it-button {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.got-it-button button {
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.7rem;
+  background-color: rgb(55 48 163);
+  color: white;
+  cursor: pointer;
+}
+
+.got-it-button button:hover {
+  background-color: rgb(67 56 202);
+}
+
+/* name input */
+
+.name-input {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.name-input input {
+  padding: 0.5rem 1rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgb(199 210 254);
+  background-color: rgb(224 231 255);
+}
+
+/* age dropdown */
+
+.age-dropdown {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.age-dropdown select {
+  padding: 0.5rem 0.3rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgb(199 210 254);
+  background-color: rgb(224 231 255);
+}
+
+/* chatbot page */
+.chatbot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.react-chatbot-kit-chat-header {
+  background-color: rgb(55 48 163) !important;
+  color: white !important;
+  display: flex;
+  justify-content: center;
+  padding: 1rem !important;
+  font-size: 1rem !important;
+}
+
+.react-chatbot-kit-chat-container {
+  padding: 2rem 0;
 }
