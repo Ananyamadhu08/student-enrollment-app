@@ -1,9 +1,13 @@
 import React from 'react';
 import { createClientMessage } from 'react-chatbot-kit';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { saveStudentInfo } from '../slices/studentSlice';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
 
   const handleGotIt = () => {
     const botMessage = createClientMessage('Got it', {});
@@ -60,6 +64,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         messages: [...prev.messages, countMessage],
       }));
     }, 1000);
+
+    dispatch(saveStudentInfo());
 
     setTimeout(() => {
       navigate('/enrolledStudent');
